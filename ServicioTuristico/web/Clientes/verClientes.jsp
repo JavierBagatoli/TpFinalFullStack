@@ -32,8 +32,8 @@
         <li class="active"><a href="../index.jsp">Home</a></li>
         <li><a class="drop">Servicios</a>
           <ul>
-            <li><a href="pages/gallery.html">Paquetes Turisticos</a></li>
-            <li><a href="pages/full-width.html">Servicios</a></li>
+            <li><a href="../PaquetesServicios/verPaquetes.jsp">Paquetes Turisticos</a></li>
+            <li><a href="../Servicios/verServicios.jsp">Servicios</a></li>
           </ul>
         </li>
         <li><a class="drop">Empleados</a>
@@ -41,11 +41,16 @@
             <li><a href="Empleados.jsp">Alta Empleado</a></li>
             <li><a href="verEmpleados.jsp">Ver Empleados</a></li>
             <li><a href="verClientes.jsp">Ver Clientes</a></li>
-            <li><a href="verClientes.jsp">Crear Servicio</a></li>
-            <li><a href="verClientes.jsp">Ver Servicio</a></li>
+            <li><a href="../Servicios/altaServicio.jsp">Alta Servicio</a></li>
+            <li><a href="../Servicios/verServicios.jsp">Ver Servicio</a></li>
+            <li><a href="../PaquetesServicios/altaPaquete.jsp">Alta Paquete</a></li>
+            <li><a href="../PaquetesServicios/verPaquetes.jsp">Ver Paquetes</a></li>
+            <li><a href="../Ventas/altaVenta.jsp">Crear Venta</a></li>
+            <li><a href="../Ventas/verVentas.jsp">Ver ventas</a></li>
+          </ul>
           </ul>
         </li>
-        <li><a href="#">Registrarse</a></li>
+        <li><a href="AltaCliente.jsp">Registrarse</a></li>
       </ul>
       <!-- ################################################################################################ -->
     </nav>

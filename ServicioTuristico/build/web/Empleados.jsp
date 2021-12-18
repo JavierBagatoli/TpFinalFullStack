@@ -15,6 +15,30 @@ Licence URI: https://www.os-templates.com/template-terms
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+            .boton,.formulario ,h3 ,.contenedor{
+                   display:flex;
+                   justify-content: center;
+                   align-items: center;
+            }
+            .formulario{
+                border-color: black;
+                border-top-style: solid;
+                background-color: #EEEEEE; 
+                border-radius: 50px;
+                border-bottom-style: outset;
+                width: 600px;
+            }
+            label{
+                width: 250px;
+                padding-right: 150px;
+                color: black;
+            }
+            .btn:hover{
+                background-color: black;
+            }
+        </style>
+        
     </head>
     <body id="top">
         <!-- ################################################################################################ -->
@@ -53,12 +77,13 @@ Licence URI: https://www.os-templates.com/template-terms
         <!-- ################################################################################################ -->
         <!-- ################################################################################################ -->
         <!-- ################################################################################################ -->
-        <div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');">
+        <div class="bgded overlay" style="background-image:url('images/demo/backgrounds/mosaico.jpg');">
             <div id="pageintro" class="hoc clear"> 
                 <!-- ################################################################################################ -->
                 
                     <h3 class="heading">Crear Nuevo Empleado</h3>
-                
+                <div class="contenedor">    
+                    <div class="formulario">
                 <form action="SvEmpleado" method="POST" class="centrar-contenido">
                     <p><label class="one_quarter first">Nombre: </label></th><th> <input type="text" name="nombre"></p>
                     <p><label class="one_quarter first">Apellido </label></th><th> <input type="text" name="apellido" class=""></p>
@@ -72,7 +97,8 @@ Licence URI: https://www.os-templates.com/template-terms
                     <p><label class="one_quarter first">Contraseña: </label></th><th> <input type="password" name="password" class=""></p>
                         <button type="submit" class="btn">Dar Alta Empleado</button>
                 </form>
-            
+                    </div>
+                </div>
                 <!-- ################################################################################################ -->
             </div>
         </div>

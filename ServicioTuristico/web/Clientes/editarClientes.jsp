@@ -16,6 +16,29 @@ Licence URI: https://www.os-templates.com/template-terms
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+            .boton,.formulario ,h3 ,.contenedor{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .formulario{
+                border-color: black;
+                border-top-style: solid;
+                background-color: #EEEEEE;
+                border-radius: 50px;
+                border-bottom-style: outset;
+                width: 600px;
+            }
+            label{
+                width: 250px;
+                padding-right: 150px;
+                color: black;
+            }
+            .btn:hover{
+                background-color: black;
+            }
+        </style>
     </head>
     <body id="top">
         <!-- ################################################################################################ -->
@@ -34,8 +57,8 @@ Licence URI: https://www.os-templates.com/template-terms
         <li class="active"><a href="index.jsp">Home</a></li>
         <li><a class="drop">Servicios</a>
           <ul>
-            <li><a href="">Paquetes Turisticos</a></li>
-            <li><a href="">Servicios</a></li>
+            <li><a href="../PaquetesServicios/verPaquetes.jsp">Paquetes Turisticos</a></li>
+            <li><a href="../Servicios/verServicios.jsp">Servicios</a></li>
           </ul>
         </li>
         <li><a class="drop">Empleados</a>
@@ -43,6 +66,12 @@ Licence URI: https://www.os-templates.com/template-terms
             <li><a href="../Empleados.jsp">Alta Empleado</a></li>
             <li><a href="../verEmpleados.jsp">Ver Empleados</a></li>
             <li><a href="verClientes.jsp">Ver Clientes</a></li>
+            <li><a href="../Servicios/altaServicio.jsp">Alta Servicio</a></li>
+            <li><a href="../Servicios/verServicios.jsp">Ver Servicio</a></li>
+            <li><a href="../PaquetesServicios/altaPaquete.jsp">Alta Paquete</a></li>
+            <li><a href="../PaquetesServicios/verPaquetes.jsp">Ver Paquetes</a></li>
+            <li><a href="../Ventas/altaVenta.jsp">Crear Venta</a></li>
+            <li><a href="../Ventas/verVentas.jsp">Ver ventas</a></li>
           </ul>
         </li>
         <li><a href="AltaCliente.jsp">Registrarse</a></li>
@@ -54,12 +83,13 @@ Licence URI: https://www.os-templates.com/template-terms
         <!-- ################################################################################################ -->
         <!-- ################################################################################################ -->
         <!-- ################################################################################################ -->
-        <div class="bgded overlay" style="background-image:url('../images/demo/backgrounds/01.png');">
+        <div class="bgded overlay" style="background-image:url('../images/demo/backgrounds/mosaico.jpg'); height: 1080px;">
             <div id="pageintro" class="hoc clear"> 
                 <!-- ################################################################################################ -->
                 
                     <h3 class="heading">Editar Cliente</h3>
-                
+                <div class="contenedor">    
+                    <div class="formulario">
                 <form action="../SvModificarCliente" method="POST" class="centrar-contenido">
                     <% HttpSession misession = request.getSession();
                         Cliente cliente = (Cliente) misession.getAttribute("persona");
@@ -78,7 +108,8 @@ Licence URI: https://www.os-templates.com/template-terms
                         
                     <%}%>
                 </form>
-            
+                    </div>
+                </div>
                 <!-- ################################################################################################ -->
             </div>
         </div>

@@ -33,8 +33,8 @@ Licence URI: https://www.os-templates.com/template-terms
         <li class="active"><a href="index.jsp">Home</a></li>
         <li><a class="drop">Servicios</a>
           <ul>
-            <li><a href="pages/gallery.html">Paquetes Turisticos</a></li>
-            <li><a href="pages/full-width.html">Servicios</a></li>
+            <li><a href="PaquetesServicios/verPaquetes.jsp">Paquetes Turisticos</a></li>
+            <li><a href="Servicios/verServicios.jsp">Servicios</a></li>
           </ul>
         </li>
         <li><a class="drop">Empleados</a>
@@ -59,7 +59,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');">
+<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/mosaico.jpg');">
   <div id="pageintro" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <article>
