@@ -82,12 +82,20 @@
             <tr>
                 <%
                     int id = venta.getNum_vante();
-                    String cliente = venta.getCliente().getNombre() + " " + venta.getCliente().getApellido();
-                    String vendedor = venta.getEmpleado().getNombre() + " " + venta.getEmpleado().getApellido();
+                    //Comprobar que en la tabla los valores no sean null, de serlo tendran por nombre " "
+                    String cliente = "";
+                    if (venta.getCliente()!= null){
+                        cliente = venta.getCliente().getNombre() + " " + venta.getCliente().getApellido();}
+                     
+                    String vendedor = "";
+                    if (venta.getEmpleado() != null){
+                    vendedor = venta.getEmpleado().getNombre() + " " + venta.getEmpleado().getApellido();}
+                    
                     String paquete = "No adquirido";
                     if (venta.getPaquete() != null) {
                         paquete = venta.getPaquete().getCodigo_paquete();
                     }
+                    ///
                     String servicio1 = "No adquirido";
                     String servicio2 = "No adquirido";
                     String servicio3 = "No adquirido";

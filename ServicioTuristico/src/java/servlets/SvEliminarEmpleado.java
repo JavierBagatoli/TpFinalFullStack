@@ -37,6 +37,8 @@ public class SvEliminarEmpleado extends HttpServlet {
             request.getSession().setAttribute("ListaPersonas", control.traerEmpleado());
         } catch (NonexistentEntityException ex) {
             Logger.getLogger(SvEliminarEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(SvEliminarEmpleado.class.getName()).log(Level.SEVERE, null, ex);
         }
             
             

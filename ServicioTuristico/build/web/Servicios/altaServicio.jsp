@@ -110,7 +110,7 @@ Licence URI: https://www.os-templates.com/template-terms
                                 <p><label class="one_quarter first">Coste: </label></th><th> <input type="text" name="coste"></p>
 
 
-                                <button type="submit" class="btn">Registrarse</button>
+                                <button type="submit" class="btn">Registrar Servicio</button>
                         </form>
                     </div>
                 </div>

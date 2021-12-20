@@ -55,7 +55,7 @@ Licence URI: https://www.os-templates.com/template-terms
             <header id="header" class="hoc clear">
                 <div id="logo" class="fl_left"> 
                     <!-- ################################################################################################ -->
-                    <h1 class="logoname"><a href="index.jsp">Turismo<span>a</span>rgentina</a></h1>
+                    <h1 class="logoname"><a href="../index.jsp">Turismo<span>a</span>rgentina</a></h1>
                     <!-- ################################################################################################ -->
                 </div>
                 <nav id="mainav" class="fl_right"> 
@@ -124,12 +124,20 @@ Licence URI: https://www.os-templates.com/template-terms
                                             servicio3 = (venta.getServicios().get(2).getNombre());
                                         }
                                     }
+                                    //Comprobar que los datos de cliente y vendedor no son null
+                                    String clienteVenta = "";
+                                    if(venta.getCliente() != null)
+                                        {clienteVenta = venta.getCliente().getNombre() + " " + venta.getCliente().getApellido();}
+                                    String vendedorVenta = "";
+                                    if(venta.getEmpleado() != null){
+                                        vendedorVenta = venta.getEmpleado().getNombre() + " " + venta.getEmpleado().getApellido();
+                                    }
                             %>
                             <form name="EditarVenta" action="../SvModificarVenta" method="POST">
                                 <p>
                                     <label>Cliente: </label>
                                     <select name="cliente">
-                                        <option><%=venta.getCliente().getNombre() + " " + venta.getCliente().getApellido()%></option>
+                                        <option><%=clienteVenta%></option>
                                         <%for (Cliente cliente : listaClientes) {
                                         %>
                                         <option><%=cliente.getNombre() + " " + cliente.getApellido()%></option>
@@ -139,7 +147,7 @@ Licence URI: https://www.os-templates.com/template-terms
 
                                 <p><label>Vendedor: </label>
                                     <select name="vendedor">
-                                        <option><%=venta.getEmpleado().getNombre() + " " + venta.getEmpleado().getApellido()%> </option>
+                                        <option><%=vendedorVenta%> </option>
                                         <%
                                             for (Empleado empleado : listaEmpleados) {
                                         %>

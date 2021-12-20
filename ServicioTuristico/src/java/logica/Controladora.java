@@ -1,6 +1,8 @@
 package logica;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -58,7 +60,24 @@ public class Controladora {
         return controlPersis.traerEmpleado();
     }
 
-    public void eliminarEmpleado(int id) throws NonexistentEntityException{
+    public void eliminarEmpleado(int id) throws NonexistentEntityException, Exception{
+        List<Venta> listaVentas = traerVentas();
+        for(Venta listaVenta : listaVentas){
+            Integer ventaIdEmpleado;
+            try{
+                ventaIdEmpleado = listaVenta.getEmpleado().getId_Empleado();
+            }catch(NullPointerException e){
+                ventaIdEmpleado = 0;}
+            Integer idEmpelado = id;
+            if (ventaIdEmpleado == idEmpelado )
+                {Venta ventaActu = controlPersis.buscarVenta(listaVenta.getNum_vante());
+                 ventaActu.setEmpleado(null);
+                 
+                 controlPersis.modificarVenta(ventaActu);
+                }
+        }
+        
+        
         controlPersis.eliminarEmpleado(id);
     }
     
@@ -72,7 +91,7 @@ public class Controladora {
     
     ///Funcionamiento sobre cliente
     
-    public void crearCliente(String nombre,String apellido,String direccion,String  dni,String  nacionalidad,String  celular,String  email, String password) {
+    public void crearCliente(String nombre,String apellido,String direccion,String  dni,String  nacionalidad,String  celular,String  email, String password, Date nacimiento) {
         Cliente cliente = new Cliente();
         cliente.setNombre(nombre);
         cliente.setApellido(apellido);
@@ -82,6 +101,7 @@ public class Controladora {
         cliente.setNumeroCelular(celular);
         cliente.setEmail(email);
         cliente.setPassword(password);
+        cliente.setFechaNacimiento(nacimiento);
         
         controlPersis.crearCliente(cliente);
     }
@@ -90,7 +110,23 @@ public class Controladora {
         return controlPersis.traerClientes();
     }
 
-    public void eliminarCliente(int id) throws NonexistentEntityException{
+    public void eliminarCliente(int id) throws NonexistentEntityException, Exception{
+        List<Venta> listaVentas = traerVentas();
+        for(Venta listaVenta : listaVentas){
+            Integer ventaIdCliente;
+            try{
+                ventaIdCliente = listaVenta.getCliente().getId_Persona();
+            }catch(NullPointerException e){
+                ventaIdCliente = 0;}
+            Integer idCliente = id;
+            if (ventaIdCliente == idCliente )
+                {Venta ventaActu = controlPersis.buscarVenta(listaVenta.getNum_vante());
+                 ventaActu.setCliente(null);
+
+                 controlPersis.modificarVenta(ventaActu);
+                }
+        }
+        
         try {
             controlPersis.eliminarCliente(id);
         } catch (persistencia.exceptions.NonexistentEntityException ex) {
@@ -115,7 +151,7 @@ public class Controladora {
         servicio.setDestino_servicio(destino);
         servicio.setCosto_servicio(coste);
         servicio.setEstado(true);
-        
+        servicio.setFecha_servicio(new Date());
         controlPersis.crearServicio(servicio);
     }
     
@@ -265,7 +301,7 @@ public class Controladora {
         }   
 
         venta.setMedio_pago("Efectivo");
-        
+        venta.setFecha_venta(new Date());
         controlPersis.crearVenta(venta);
     }
     

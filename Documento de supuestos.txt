@@ -1,0 +1,2 @@
+Se asume que una venta jamás tendrá mas de un paquete y tres servicios individuales.
+Se asume que un paquete turístico siempre tendrá más de dos servicios y menos de 8

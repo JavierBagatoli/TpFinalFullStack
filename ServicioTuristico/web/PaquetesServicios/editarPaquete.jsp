@@ -101,10 +101,10 @@ Licence URI: https://www.os-templates.com/template-terms
                                     int id = paquete.getId_paquete();
                             %>
                             <form name="EditarPaquete" action="../SvAltaPaquete" method="POST">
-                                <p><label>Nombre Paquete: </label> <input type="text" name="nombre_paquete" value="<%=paquete.getCodigo_paquete()%>"></p>
+                                <p><label>Nombre Paquete: </label> <input type="text" name="nombre_paquete" value="<%=paquete.getCodigo_paquete()%>" required></p>
                                 <p>
                                     <label>Servicio incluido nº1: </label>
-                                    <select name="servicio1">
+                                    <select name="servicio1" required>
                                         <option></option>
                                         <% Controladora control = new Controladora();
                                             List<Servicio> listaServicios = control.traerServicios();
@@ -116,7 +116,7 @@ Licence URI: https://www.os-templates.com/template-terms
                                 </p>
 
                                 <p><label>Servicio incluido nº2: </label>
-                                    <select name="servicio2">
+                                    <select name="servicio2" required>
                                         <option></option>
                                         <%
                                             for (Servicio servicio : listaServicios) {

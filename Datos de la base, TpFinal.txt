@@ -1,0 +1,4 @@
+Usuario: AdminTurismo
+Contraseña: Turismo
+Base: BaseTurismo
+serverTimezone=UTC

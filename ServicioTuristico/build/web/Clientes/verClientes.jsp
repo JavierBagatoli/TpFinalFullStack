@@ -1,3 +1,4 @@
+<%@page import="java.util.Date"%>
 <%@page import="java.util.List"%>
 <%@page import="logica.Cliente"%>
 <%@page import="logica.Controladora"%>
@@ -50,7 +51,6 @@
           </ul>
           </ul>
         </li>
-        <li><a href="AltaCliente.jsp">Registrarse</a></li>
       </ul>
       <!-- ################################################################################################ -->
     </nav>
@@ -69,6 +69,7 @@
                     <th>Nacionalidad</th>
                     <th>Email</th>
                     <th>Numero celular</th>
+                    <th>Fecha Nacimiento<th>
                 </tr>
             </thead>
             <tbody>
@@ -84,6 +85,7 @@
                     String celular = persona.getNumeroCelular();
                     String email = persona.getEmail();
                     int id = persona.getId_Persona();
+                    Date fechaNacimiento = persona.getFechaNacimiento();
                     %>
                     
                     <td><%=nombreCompleto%></td>
@@ -93,6 +95,7 @@
                     <td><%=nacionalidad %></td>
                     <td><%=email %></td>
                     <td><%=celular %></td>
+                    <td><%=fechaNacimiento %></td>
 
                     <th>
                         <form name="borrarCliente" action="../SvClienteBaja" method="POST">
